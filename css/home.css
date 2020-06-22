@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 背景图 */
+.home {
+    background: url(../img/beijing.jpg) no-repeat;
+    background-size: 100% 100vh;
+}
+
+.main {
+    margin: 0 auto;
+}
+
+.main p {
+    font-size: 75px;
+    width: 300px;
+    margin: 200px auto 55px auto;
+    color: white;
+}
+
+.main .container {
+    margin: 0 auto 0 auto;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    width: 90%;
+}
+
+.main .a {
+    margin-top: 50px;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    color: white;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 42px;
+    margin-right: 40px;
+}
+
+.main .a:hover {
+    background-color: #f44336;
+    border-color: #f44336;
+}
+
+.main a:active {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.link a {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    margin: 95px 40px 52px 0;
+}
+
+/* 音乐视频部分 */
+.content {
+    width: 70%;
+    /* height: 1000px; */
+    margin: 15px auto 20px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1);
+}
+
+.content .p {
+    /* width: 280px; */
+    padding: 55px 0 45px 0;
+    color: #85929e;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* 音乐部分 */
+.row {
+    width: 50%;
+    margin: 30px auto 30px auto;
+}
+
+/* 视频部分 */
+video {
+    width: 50%;
+    background-color: black;
+    margin-bottom: 75px;
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1);
+}
+
+
+
+
+/* 文章部分 */
+.article {
+    width: 70%;
+    background-color: #fff;
+    margin: 0 auto 20px auto;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1);
+}
+
+.article_title {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.article_title img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.article_title span {
+    vertical-align: center;
+    font-size: 25px;
+    color: #ac86bc;
+}
+
+.article_list {
+    display: flex;
+    justify-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 0 0 25px 25px;
+
+}
+
+.article_list .list {
+    width: 330px;
+    height: 200px;
+    margin-bottom: 2%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1);
+}
+
+.article_list .list {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+.article_list .list:hover {
+    transform: scale(1.05);
+    z-index: 99;
+}
+
+.article_list .list img {
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+    transition: all 0.6s;
+    border-radius: 15px;
+}
+
+.article_list .list p {
+    position: relative;
+    top: -60px;
+    color: white;
+    font-size: 25px;
+}
+
+/* 相册部分 */
+.albums {
+    width: 70%;
+    /* height: 600px; */
+    margin: 20px auto 20px auto;
+    padding-top: 20px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+.albums .album {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+.albums .title {
+    text-align: left;
+    color: #ac86bc;
+    /* border-radius: 15px; */
+    margin: 0 0 0 30px;
+    font-size: 25px;
+}
+
+.album_list {
+    width: 260px;
+    height: 220px;
+    color: white;
+    border-radius: 15px;
+    margin: 10px 0 10px 0;
+    background-color: #ac86bc;
+    /* transform: translate(0) scale(1); */
+}
+
+.album_list a {
+    text-decoration: none;
+}
+
+.album_list a:hover {
+    color: tomato;
+}
+
+.album_list img {
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 240px;
+    height: 180px;
+}

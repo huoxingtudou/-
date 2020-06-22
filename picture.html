@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相册</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/picture.css">
+</head>
+
+<body>
+    <div class="other">
+        <div class="nav">
+            <ul>
+                <img src="img/loading1 .gif">
+                <li class="nav_tab1"><a href="#"><span class="iconfont">&#xe65f;</span>首页</a></li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span>日志</a></li>
+                <li><a href="#"><span class="iconfont">&#xe797;</span>关于</a></li>
+                <li><a href="#"><span class="iconfont">&#xe612;</span>相册</a></li>
+                <li><a href="#"><span class="iconfont">&#xe61e;</span>留言</a></li>
+                <li><a href="#"><span class="iconfont">&#xe67c;</span>登录</a></li>
+                <li><a href="#"><span class="iconfont">&#xe71c;</span>注册</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <p class="title_nav">相册</p>
+            <div class="shici">
+                <span id="shici"></span><br>
+            </div>
+        </div>
+    </div>
+    <div id="carousel">
+        <div class="title"><img src="img/2.gif" alt=""> 精彩集锦</div>
+        <div id="carousel-inner">
+            <div class="item active">
+                <img src="img/b.jpg">
+            </div>
+            <div class="item">
+                <img src="img/c.jpg">
+            </div>
+            <div class="item">
+                <img src="img/d.jpg">
+            </div>
+            <div class="item">
+                <img src="img/e.jpg">
+            </div>
+            <div class="item">
+                <img src="img/f.jpg">
+            </div>
+            <div class="item">
+                <img src="img/g.jpg">
+            </div>
+            <div id="carousel-indicators">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="carousel-control left">&lsaquo;</div>
+            <div class="carousel-control right">&rsaquo;</div>
+        </div>
+    </div>
+    <div class="albums">
+        <div class="title"><img src="img/1.gif">我的相册呀！</div>
+        <div class="album">
+            <div class="album_list">
+                <a href="#">
+                    <img src="img/picture/view_1.jpg">
+                    <div>喜欢的风景呀!</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2020 yph </p>
+    </div>
+    <span class="iconfont icon">&#xe62e;</span>
+</body>
+
+</html>
+<script src="JS/cursor.js"></script>
+<script src="JS/picture.js"></script>
+<script src="JS/jquery.min.js"></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<!-- 诗词自动 -->
+<script type="text/javascript">
+    jinrishici.load(function (result) {
+        // 自己的处理逻辑
+        content = result.data.origin.content,
+            title = result.data.origin.title,
+            dynasty = result.data.origin.dynasty,
+            author = result.data.origin.author,
+            info = '《' + title + '》' + author
+        pre = []
+        for (var key in content) {
+            pre.push(content[key])
+        }
+        var typed = new Typed("#shici", {
+            strings: pre,
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+        });
+    });
+</script>

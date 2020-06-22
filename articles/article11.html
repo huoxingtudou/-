@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-211130ba7a.css">
+    <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-60ecaf1f42.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="other">
+        <div class="nav">
+            <ul class="main_info">
+                <img src="../img/loading1 .gif">
+                <li class="nav_tab1"><a href="#"><span class="iconfont">&#xe65f;</span>首页</a></li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span>日志</a></li>
+                <li><a href="#"><span class="iconfont">&#xe797;</span>关于</a></li>
+                <li><a href="#"><span class="iconfont">&#xe612;</span>相册</a></li>
+                <li><a href="#"><span class="iconfont">&#xe61e;</span>留言</a></li>
+                <li><a href="#"><span class="iconfont">&#xe67c;</span>登录</a></li>
+                <li><a href="#"><span class="iconfont">&#xe71c;</span>注册</a></li>
+            </ul>
+        </div>
+        <div class="title_article">
+            <p>jQuery(2)-使用</p>
+        </div>
+    </div>
+    <div class="content">
+        <div id="content_views" class="article markdown_views prism-atom-one-dark">
+            <p><strong>一.jQuery顶级对象$</strong></p>
+            <ol>
+                <li>$是jQuery的别称，在代码中可以使用jQuery代替 $,一般用 $</li>
+                <li>$是jQuery的顶级对象，相对于原生JavaScript中的window。把元素利用 $包装成jQuery对象，可以调用jQuery的方法</li>
+            </ol>
+            <p><strong>二.jQuery对象和DOM对象</strong><br>
+                1.用原生JS获取的对象就是DOM对象<br>
+                2.jQuery方法获取的元素就是jQuery对象</p>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token comment">//1.DOM对象：用原生js获取过来的对象就是DOM对象</span>
+<span class="token keyword">var</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//2.jQuery对象就是用jquery方式获取的对象   本质：通过$把DOM元素进行了包装</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//3.jQuery对象只能使用jquery方法，DOM对象则只能使用原生的javascript的属性和方法</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li></ul></pre>
+            <p>3.DOM对象与jQuery对象之间是可以相互转换的<br>
+                转换的原因是：原生JS比jQuery更大，原生的一些属性和方法jQuery没有给我们封装，要使用这些属性和方法需要把jQuery对象转换为DOM对象才能使用。<br>
+                （1）DOM对象转换为jQuery对象： $(DOM对象)<br>
+                （2）jQuery对象转换为DOM对象</p>
+            <ol>
+                <li>$(‘div’)[index]</li>
+                <li>$(‘div’).get(index)</li>
+            </ol>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>video src <span class="token operator">=</span><span class="token string">"mov.mp4"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>video<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token number">1.</span><span class="token constant">DOM</span>对象转换为jQuery对象
+（<span class="token number">1</span>）直接获取，得到的就是jQuery
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'video'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>我们已经使用原生js，获取<span class="token constant">DOM</span>对象
+<span class="token keyword">var</span> video <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'video'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span>video<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">2.</span>jQuery对象转换为<span class="token constant">DOM</span>对象
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'video'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'video'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li></ul></pre>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2020 yph </p>
+    </div>
+    <span class="iconfont icon">&#xe62e;</span>
+</body>
+
+</html>
+<script src="../JS/yinghua.js"></script>
+<script src="../JS/cursor.js"></script>
+<script src="../JS/jquery.min.js"></script>
+<script src="../JS/base.js"></script>

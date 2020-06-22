@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#carousel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 60%;
+    position: relative;
+    left: 20%;
+    background-color: white;
+    border-radius: 25px;
+}
+
+#carousel .title {
+    text-align: left;
+    color: #ac86bc;
+    margin: 0 0 20px 30px;
+    font-size: 25px;
+}
+
+#carousel-inner .item {
+    display: none;
+}
+
+#carousel-inner .active {
+    display: block;
+}
+
+.item img {
+    width: 90%;
+    height: 50vh;
+    border-radius: 25px;
+}
+
+#carousel-indicators {
+    /* width: 60%; */
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    list-style: none;
+    position: absolute;
+    bottom: 30px;
+    left: 45%;
+}
+
+#carousel-indicators ul li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+#carousel-indicators .liactive {
+    background-color: white;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    font-size: 72px;
+    line-height: 72px;
+    text-align: center;
+    width: 72px;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.left {
+    left: 5%;
+}
+
+.right {
+    right: 5%;
+}
+
+.carousel-control:hover {
+    opacity: 1;
+}
+
+.other {
+    margin-bottom: 30px;
+}
+
+/* 相册部分 */
+.albums {
+    width: 60%;
+    /* height: 600px; */
+    margin: 20px auto 20px auto;
+    padding-top: 20px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+.album {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+.title {
+    text-align: left;
+    color: #ac86bc;
+    /* border-radius: 15px; */
+    margin: 0 0 0 30px;
+    font-size: 25px;
+}
+
+.album_list {
+    width: 260px;
+    height: 220px;
+    color: white;
+    border-radius: 15px;
+    margin: 10px 0 10px 0;
+    background-color: #ac86bc;
+    /* transform: translate(0) scale(1); */
+}
+
+.album_list a {
+    text-decoration: none;
+}
+
+.album_list a:hover {
+    color: tomato;
+}
+
+.album_list img {
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 240px;
+    height: 180px;
+}

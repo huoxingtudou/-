@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-211130ba7a.css">
+    <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-60ecaf1f42.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="other">
+        <div class="nav">
+            <ul class="main_info">
+                <img src="../img/loading1 .gif">
+                <li class="nav_tab1"><a href="#"><span class="iconfont">&#xe65f;</span>首页</a></li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span>日志</a></li>
+                <li><a href="#"><span class="iconfont">&#xe797;</span>关于</a></li>
+                <li><a href="#"><span class="iconfont">&#xe612;</span>相册</a></li>
+                <li><a href="#"><span class="iconfont">&#xe61e;</span>留言</a></li>
+                <li><a href="#"><span class="iconfont">&#xe67c;</span>登录</a></li>
+                <li><a href="#"><span class="iconfont">&#xe71c;</span>注册</a></li>
+            </ul>
+        </div>
+        <div class="title_article">
+            <p>预解析</p>
+        </div>
+    </div>
+    <div class="content">
+        <div id="content_views" class="article markdown_views prism-atom-one-dark">
+            <h2>预解析定义</h2>
+            <ol>
+                <li>js引擎运行js主要分为两步（1）预解析 （2）代码执行<br>
+                    （1）预解析：js引擎会把js里面所有的var和function提升到当前作用域的最前面<br>
+                    （2）代码执行：按照代码书写的顺序从上往下执行</li>
+                <li>预解析分为变量预解析（变量提升）和函数解析（函数提升）<br>
+                    （1）变量提升：把所有的变量声明提升到当前作用域的最前面，不提升赋值操作<br>
+                    （2）函数提升：把所有的函数声明提升到当前作用域的最前面，不调用</li>
+            </ol>
+            <h2><a name="t1"></a><a name="t1"></a><a id="1_7"></a>案例1</h2>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""></ul></pre>
+            <p>1.解析：num没有声明，所以浏览器会报错</p>
+            <h2><a name="t2"></a><a name="t2"></a><a id="2_12"></a>案例2</h2>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
+            <p>解析：<br>
+                2.(1)变量提升之后的代码：</p>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">var</span> num<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li></ul></pre>
+            <p>(2)代码从上往下执行，num的结果是undefined</p>
+            <h2><a name="t3"></a><a name="t3"></a><a id="_26"></a>案例三</h2>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token function">fu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li></ul></pre>
+            <p>解析：<br>
+                3.(1)函数提升之后的代码：</p>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">function</span> <span class="token function">fu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">fu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li></ul></pre>
+            <p>(2)代码从上往下执行，num的结果是11</p>
+            <h2><a name="t4"></a><a name="t4"></a><a id="_43"></a>案例四</h2>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">var</span> <span class="token function">fu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li></ul></pre>
+            <p>解析：<br>
+                （1）变量提升之后的代码</p>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">var</span> fu<span class="token punctuation">;</span>
+<span class="token function">fu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function-variable function">fu</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li></ul></pre>
+            <p>（2）定义了一个fu变量，fu()这个函数不存在，所以报错</p>
+            <h2><a name="t5"></a><a name="t5"></a><a id="_59"></a>经典案例</h2>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> b <span class="token operator">=</span>c <span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li></ul></pre>
+            <p>解析：<br>
+                (1)函数和变量提升之后</p>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> a <span class="token punctuation">;</span>
+a <span class="token operator">=</span> b <span class="token operator">=</span>c <span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li></ul></pre>
+            <p>(2)首先没有声明的变量属于全局变量，所以函数体里的输出为 9，9，9。变量a属于局部变量，只能在函数体中用。所以最后输出结果为9，9，9，9，9，报错</p>
+            <h2><a name="t6"></a><a name="t6"></a><a id="letvarconst_88"></a>let,var,const</h2>
+            <p>let是块级作用域，函数内部使用let定义后，对函数外部无影响<br>
+                var定义的变量可以修改，如果不初始化会输出undefined，不会报错<br>
+                const定义的变量不可以修改，而且必须初始化</p>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2020 yph </p>
+    </div>
+    <span class="iconfont icon">&#xe62e;</span>
+</body>
+
+</html>
+<script src="../JS/yinghua.js"></script>
+<script src="../JS/cursor.js"></script>
+<script src="../JS/jquery.min.js"></script>
+<script src="../JS/base.js"></script>

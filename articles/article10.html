@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-211130ba7a.css">
+    <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-60ecaf1f42.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="other">
+        <div class="nav">
+            <ul class="main_info">
+                <img src="../img/loading1 .gif">
+                <li class="nav_tab1"><a href="#"><span class="iconfont">&#xe65f;</span>首页</a></li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span>日志</a></li>
+                <li><a href="#"><span class="iconfont">&#xe797;</span>关于</a></li>
+                <li><a href="#"><span class="iconfont">&#xe612;</span>相册</a></li>
+                <li><a href="#"><span class="iconfont">&#xe61e;</span>留言</a></li>
+                <li><a href="#"><span class="iconfont">&#xe67c;</span>登录</a></li>
+                <li><a href="#"><span class="iconfont">&#xe71c;</span>注册</a></li>
+            </ul>
+        </div>
+        <div class="title_article">
+            <p>jQuery(1)-概述</p>
+        </div>
+    </div>
+    <div class="content">
+        <div id="content_views" class="article markdown_views prism-atom-one-dark">
+            <h2><a name="t0"></a><a name="t0"></a><a id="1JavaScript_0"></a>1.JavaScript库</h2>
+            <p>javascript库：即library,是<strong>封装</strong>好特定的<strong>集合</strong>（方法和函数）。从封装一大堆函数的角度理解库，就是在这个库中，封装了很多预先定义好的函数在里面，比如动画animate,hide,show，比如获取元素等。<br>
+                简单理解：就是一个JS文件，里面对我们原生js代码进行了封装，存放在里面。<br>
+                jQuery，就是为了快速方便操作DOM，里面基本都是函数（方法）</p>
+            <h2><a name="t1"></a><a name="t1"></a><a id="2jQuery_6"></a>2.jQuery的概念</h2>
+            <p>jQuery是一个快速，简洁的JavaScript库，其设计宗旨是"write less,do more",即提倡写更少的代码，做更多的事<br>
+                jQuery封装了JavaScript常用的代码功能，优化了DOM操作，事件处理，动画设计和Ajax交互。</p>
+            <h2><a name="t2"></a><a name="t2"></a><a id="jquery_10"></a>jquery的引入</h2>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
+            <h2><a name="t3"></a><a name="t3"></a><a id="4jQuery_17"></a>4.jQuery的入口函数</h2>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token comment">//第一种</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//第二种</span>
+<span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre>
+            <p>1.等着DOM结构渲染完毕即可执行内部代码，不必等到所有外部资源加载完成，jQuery帮我们完成了封装。<br>
+                2.相对于原生js中的DOMContentLoaded。<br>
+                3.不同于原生js中的load事件是等页面文档，外部js文件，css文件，图片加载完毕才能执行内部代码。</p>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2020 yph </p>
+    </div>
+    <span class="iconfont icon">&#xe62e;</span>
+</body>
+
+</html>
+<script src="../JS/yinghua.js"></script>
+<script src="../JS/cursor.js"></script>
+<script src="../JS/jquery.min.js"></script>
+<script src="../JS/base.js"></script>

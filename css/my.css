@@ -1,0 +1,30 @@
+.my {
+    width: 80%;
+    /* height: 200px; */
+    background-color: white;
+    margin: -50px auto 0 auto;
+    border-radius: 25px;
+}
+
+.my .avatar img {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    margin-top: -65px;
+}
+
+.introduction p {
+    margin-bottom: 10px;
+}
+
+.introduction .name {
+    font-size: 30px;
+    color: #ac86bc;
+}
+
+.saying {
+    color: #999999;
+    font-size: 15px;
+    margin: 50px auto 30px auto;
+    padding-bottom: 30px;
+}

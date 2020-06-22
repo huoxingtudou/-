@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot') format('embedded-opentype'),
+        url('../font/iconfont.woff2') format('woff2'),
+        url('../font/iconfont.woff') format('woff'),
+        url('../font/iconfont.ttf') format('truetype'),
+        url('../font/iconfont.svg') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 25px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #ac86bc;
+    text-align: center;
+}
+
+/* 导航栏开始 */
+.nav {
+    height: 60px;
+}
+
+.nav ul {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    color: white;
+    z-index: 999;
+}
+
+
+.nav ul li {
+    width: 80px;
+    text-align: center;
+    list-style-type: none;
+    padding: 0 15px;
+    line-height: 60px;
+}
+
+.nav ul li a {
+    display: inline-block;
+    height: 60px;
+    width: 80px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.nav ul li:hover {
+    background-color: rgba(199, 164, 254, 0.25);
+}
+
+.nav ul li:active {
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.nav ul img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.username {
+    width: 150px;
+    text-align: center;
+    margin-right: 150px;
+    font-size: 25px;
+    line-height: 60px;
+}
+
+/* 导航栏结束 */
+
+/* 除首页外其他页面背景 */
+.other {
+    background: url(../img/beijing.jpg) no-repeat;
+    background-position: center;
+    background-size: 100% 100vh;
+}
+
+.other .title_nav {
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    margin-top: 130px;
+    margin-bottom: 60px;
+}
+
+.shici {
+    margin: 0 auto 0 auto;
+    padding-bottom: 110px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    width: 90%;
+}
+
+/* 上箭头 */
+.icon {
+    display: none;
+    position: fixed;
+    color: #7b5495;
+    right: 30px;
+    bottom: 30px;
+    font-size: 60px;
+}
+
+/* footer部分 */
+.footer {
+    width: 100%;
+    height: 60px;
+    margin-top: 15px;
+    background-color: thistle;
+}
+
+.footer p {
+    color: #ac86bc;
+    line-height: 60px;
+}

@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: fixed;
+    background: #ac86bc fixed;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container img {
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+}
+
+/* 登录界面 */
+.main {
+    width: 30%;
+    margin: 90px 150px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: rgb(181, 154, 254);
+}
+
+.index .input {
+    position: relative;
+    opacity: 1;
+    height: 20px;
+    width: 100%;
+    margin: 20px 0;
+    transition: .4s;
+}
+
+.index .input input {
+    outline: none;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(181, 154, 254);
+    position: relative;
+    line-height: 35px;
+    background: transparent;
+    z-index: 1;
+}
+
+.index .input input:focus~label {
+    top: -50%;
+    font-size: 10px;
+}
+
+.index .input label {
+    position: absolute;
+    left: 0;
+    top: 20%;
+    font-size: 20px;
+    color: rgb(129, 101, 207);
+    transition: .3s;
+}
+
+/* 登录界面结束 */
+
+/* 注册界面 */
+.main_regseter {
+    width: 480px;
+    margin: 60px 40px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main_regseter .a {
+    width: 100%;
+}
+
+.main_regseter h2 {
+    text-align: center;
+    margin-left: -173px;
+    margin-bottom: 30px;
+    height: 30px;
+}
+
+.regseter .input {
+    position: relative;
+    opacity: 1;
+    height: 30px;
+    width: 100%;
+    margin: 30px 0;
+    transition: .4s;
+}
+
+.regseter .input input {
+    outline: none;
+    width: 220px;
+    border: none;
+    border-bottom: 2px solid rgb(181, 154, 254);
+    position: relative;
+    line-height: 35px;
+    background: transparent;
+    z-index: 1;
+    margin-top: -5px;
+    margin-left: 90px;
+}
+
+
+.regseter .input label {
+    width: 100px;
+    text-align: right;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    color: rgb(129, 101, 207);
+}
+
+/* 注册界面结束 */
+.btn_resgeter {
+    display: inline-block;
+    border: none;
+    outline: none;
+    margin: 20px 0 0 -173px;
+    width: 70px;
+    height: 3rem;
+    border-radius: 3rem;
+    background: linear-gradient(90deg, rgb(181, 154, 254), rgb(245, 189, 253));
+    box-shadow: 0 0 8px rgb(181, 154, 254);
+    cursor: pointer;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    margin: 20px 0 0;
+    width: 70px;
+    height: 3rem;
+    border-radius: 3rem;
+    background: linear-gradient(90deg, rgb(181, 154, 254), rgb(245, 189, 253));
+    box-shadow: 0 0 8px rgb(181, 154, 254);
+    cursor: pointer;
+    color: white;
+}
+
+form .title {
+    display: inline-block;
+    width: 130px;
+}
+
+.success {
+    background: #E6FEE4;
+}
+
+.error {
+    background: #FFF2E5;
+}

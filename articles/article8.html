@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-211130ba7a.css">
+    <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-60ecaf1f42.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="other">
+        <div class="nav">
+            <ul class="main_info">
+                <img src="../img/loading1 .gif">
+                <li class="nav_tab1"><a href="#"><span class="iconfont">&#xe65f;</span>首页</a></li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span>日志</a></li>
+                <li><a href="#"><span class="iconfont">&#xe797;</span>关于</a></li>
+                <li><a href="#"><span class="iconfont">&#xe612;</span>相册</a></li>
+                <li><a href="#"><span class="iconfont">&#xe61e;</span>留言</a></li>
+                <li><a href="#"><span class="iconfont">&#xe67c;</span>登录</a></li>
+                <li><a href="#"><span class="iconfont">&#xe71c;</span>注册</a></li>
+            </ul>
+        </div>
+        <div class="title_article">
+            <p>BOM</p>
+        </div>
+    </div>
+    <div class="content">
+        <div id="content_views" class="article markdown_views prism-atom-one-dark">
+            <h2><a name="t0"></a><a name="t0"></a><a id="1BOM_0"></a>1.BOM</h2>
+            <p>1.概述<br>
+                BOM即浏览器对象模型，它提供了<strong>独立于内容而与浏览器窗口进行交</strong>互，其核心对象是window<br>
+                BOM由一系列相关的对象构成，并且每个对象都提供了很多方法和属性<br>
+                2.BOM的构成<br>
+                1.他是JS访问浏览器的一个接口<br>
+                2.它是一个全局变量，定义在全局作用域的变量，函数都会变成window对象的属性和方法<br>
+                在调用的时候可以省略window，alert(),prompt()等，都属于window对象方法<br>
+                注意:window下有一个特殊属性window.name</p>
+            <h2><a name="t1"></a><a name="t1"></a><a id="2window_9"></a>2.window对象的常见事件</h2>
+            <p><strong>1.窗口加载事件</strong><br>
+                window.onload当文档内容完全加载完成会触发该事件（包括图像，脚本文件，css文件），就调用处理函数<br>
+                注意：<br>
+                1.有了window.onload就可以把js代码写在页面元素的上方，因为onload是等页面内容全部加载完毕，再去执行函数，<br>
+                2.window.onload传统的注册方式只能写一次，如果有多个，会以最后一个window.onload为准<br>
+                <strong>2.调整窗口大小事件</strong></p>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">window<span class="token punctuation">.</span><span class="token function-variable function">onresize</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"resize"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
+            <p>window.onresize是调整窗口大小加载事件，当触发时就调用的处理函数<br>
+                注意：<br>
+                1.只有窗口大小发生像素变化，就会触发这个事件<br>
+                2.我们经常用这个事件完成响应式布局，window.innerWidth当前屏幕宽度</p>
+            <h2><a name="t2"></a><a name="t2"></a><a id="3_25"></a>3.定时器</h2>
+            <p>1.setTimeout()也称为回调函数callback<br>
+                用于设置一个定时器，该定时器在定时器到期后执行调用函数</p>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span>调用函数<span class="token punctuation">,</span><span class="token punctuation">[</span>延迟的毫秒数<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""></ul></pre>
+            <p>停止setTimeout()定时器<br>
+                window.clearTimeout(timeoutID) timeoutID指定时器的名字<br>
+                注意：<br>
+                （1）window可以省略<br>
+                （2）延迟时间单位时毫秒，可以省略。<strong>省略默认为0</strong><br>
+                （3）这个调用函数可以直接写<strong>函数也可以写函数名</strong>还可以’函数名()’<br>
+                （4）页面中可能有很多个定时器，可以给定时器加标识符</p>
+            <p>2.setInterval()<br>
+                <strong>setInterval()方法重复调用一个函数，每隔这个时间。就去调用一次回调函数</strong></p>
+            <pre
+                class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">window<span class="token punctuation">.</span><span class="token function">setInterval</span><span class="token punctuation">(</span>调用函数<span class="token punctuation">,</span><span class="token punctuation">[</span>延迟的毫秒数<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><div class="hljs-button {2}" data-title="复制"></div></code><ul class="pre-numbering" style=""></ul></pre>
+            <p>注意同上</p>
+            <h2><a name="t3"></a><a name="t3"></a><a id="4JS_47"></a>4.JS执行队列</h2>
+            <p>js是单线程，也就是说同一时间只能做一件事<br>
+                <strong>1.同步和异步</strong><br>
+                他们的本质区别：这条流水线上各个流程的执行顺序不同<br>
+                <strong>同步任务：</strong><br>
+                同步任务都在主线程上执行，形成一个<strong>执行栈</strong><br>
+                <strong>异步任务：</strong><br>
+                JS的异步是通过回调函数实现的<br>
+                一般情况下，异步任务分以下三种类型<br>
+                1.普通事件：如click,resize等<br>
+                2.资源加载：如load,error等<br>
+                3.定时器：如setInterval,setTimeout等<br>
+                异步任务相关的回调函数添加到任务队列中（任务队列也称消息队列）<br>
+                <strong>2.JS执行机制</strong><br>
+                1.先执行执行栈的同步任务<br>
+                2.异步任务(回调函数)放入任务队列中<br>
+                3.一旦执行栈中所有的同步任务执行完，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行。<br>
+                由于主线程不断的重复获得任务，执行任务，在获取任务，在执行，所以这种机制被称为<strong>事件循环</strong></p>
+            <h2><a name="t4"></a><a name="t4"></a><a id="5location_65"></a>5.location对象</h2>
+            <p>window对象给我们提供了一个location属性用于获取或设置窗体的URL，并且可以用于解析URL。因为这个属性返回的是一个对象，所以我们将这个属性也称为loaction对象<br>
+                <strong>1.location对象的属性</strong></p>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>location对象属性</th>
+                            <th>返回值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>location.href</strong></td>
+                            <td>获取或者设置整个URL</td>
+                        </tr>
+                        <tr>
+                            <td>location.host</td>
+                            <td>返回主机(域名)</td>
+                        </tr>
+                        <tr>
+                            <td>location.port</td>
+                            <td>返回端口号 如果没写返回空字符串</td>
+                        </tr>
+                        <tr>
+                            <td>location.pathname</td>
+                            <td>返回路径</td>
+                        </tr>
+                        <tr>
+                            <td><strong>location.search</strong></td>
+                            <td>返回参数</td>
+                        </tr>
+                        <tr>
+                            <td>location.hash</td>
+                            <td>返回片段 #后面内容常用于链接 锚点</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>2.location对象的方法</strong></p>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>location对象方法</th>
+                            <th>返回值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>location.assign()</td>
+                            <td>和href一样，可以跳转页面（也称为重定向页面）可以后退</td>
+                        </tr>
+                        <tr>
+                            <td>location.replace ()</td>
+                            <td>替换当前页面，因为不记录历史，所以不能后退页面</td>
+                        </tr>
+                        <tr>
+                            <td>location.reload()</td>
+                            <td>重新加载页面，相对于刷新按钮或者f5 如果参数为true强制刷新ctrl+f5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2><a name="t5"></a><a name="t5"></a><a id="6navigator_82"></a>6.navigator对象</h2>
+            <p>navigator对象包含有关浏览器的信息，它有很多属性，我们最常使用的是userAgent，该属性可以返回由客户机发送服务器的user-agent头部的值。</p>
+            <h2><a name="t6"></a><a name="t6"></a><a id="7history_84"></a>7.history对象</h2>
+            <p>window对象给我们提供了一个history对象,与浏览器历史记录进行交互。该对象包含用户访问过的URL。</p>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>history对象方法</th>
+                            <th>作用</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>back()</td>
+                            <td>可以后退功能</td>
+                        </tr>
+                        <tr>
+                            <td>forward()</td>
+                            <td>前进功能</td>
+                        </tr>
+                        <tr>
+                            <td>go(参数)</td>
+                            <td>前进后退功能 参数如果是1前进1个页面如果是-1后退一个页面</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2020 yph </p>
+    </div>
+    <span class="iconfont icon">&#xe62e;</span>
+</body>
+
+</html>
+<script src="../JS/yinghua.js"></script>
+<script src="../JS/cursor.js"></script>
+<script src="../JS/jquery.min.js"></script>
+<script src="../JS/base.js"></script>

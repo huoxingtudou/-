@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/my.css">
+    <title>关于我</title>
+</head>
+
+<body>
+    <div class="other">
+        <div class="nav">
+            <ul>
+                <img src="img/loading1 .gif">
+                <li class="nav_tab1"><a href="#"><span class="iconfont">&#xe65f;</span>首页</a></li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span>日志</a></li>
+                <li><a href="#"><span class="iconfont">&#xe797;</span>关于</a></li>
+                <li><a href="#"><span class="iconfont">&#xe612;</span>相册</a></li>
+                <li><a href="#"><span class="iconfont">&#xe61e;</span>留言</a></li>
+                <li><a href="#"><span class="iconfont">&#xe67c;</span>登录</a></li>
+                <li><a href="#"><span class="iconfont">&#xe71c;</span>注册</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <p class="title_nav">关于我</p>
+            <div class="shici">
+                <span id="shici"></span><br>
+            </div>
+        </div>
+    </div>
+    <div class="my">
+        <div class="avatar">
+            <img src="img/my.jpg">
+        </div>
+        <div class="introduction">
+            <!-- <p class="name">yanpinghui</p> -->
+            <p class="a">在校学生</p>
+            <div class="saying">
+                <p>If you wish to succeed, you should use persistence as your good friend, experience as
+                    your
+                </p>
+                <p>reference, prudence as your brother and hope as your sentry.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2020 yph </p>
+    </div>
+    <span class="iconfont icon">&#xe62e;</span>
+</body>
+
+</html>
+<script src="JS/my.js"></script>
+<script src="JS/cursor.js"></script>
+<script src="JS/my.js"></script>
+<script src="JS/jquery.min.js"></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<!-- 诗词自动 -->
+<script type="text/javascript">
+    jinrishici.load(function (result) {
+        // 自己的处理逻辑
+        content = result.data.origin.content,
+            title = result.data.origin.title,
+            dynasty = result.data.origin.dynasty,
+            author = result.data.origin.author,
+            info = '《' + title + '》' + author
+        pre = []
+        for (var key in content) {
+            pre.push(content[key])
+        }
+        var typed = new Typed("#shici", {
+            strings: pre,
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+        });
+    });
+</script>

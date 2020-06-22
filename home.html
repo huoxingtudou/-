@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+</head>
+
+<body>
+    <!-- <img src="img/beijing.jpg" class="beijing"> -->
+    <div class="home">
+        <div class="nav">
+            <ul>
+                <img src="img/loading1 .gif">
+                <li class="nav_tab1"><a href="#"><span class="iconfont">&#xe65f;</span>首页</a></li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span>日志</a></li>
+                <li><a href="#"><span class="iconfont">&#xe797;</span>关于</a></li>
+                <li><a href="#"><span class="iconfont">&#xe612;</span>相册</a></li>
+                <li><a href="#"><span class="iconfont">&#xe61e;</span>留言</a></li>
+                <li><a href="#"><span class="iconfont">&#xe67c;</span>登录</a></li>
+                <li><a href="#"><span class="iconfont">&#xe71c;</span>注册</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <p>长路漫漫</p>
+            <div class="container">
+                <span id="shici"></span><br>
+                <a href="#" class="a b">开始阅读</a>
+                <a href="https://github.com/huoxingtudou" class="a">github</a>
+                <div class="link" id="content">
+                    <a href="https://github.com/huoxingtudou"><span class="iconfont">&#xe712;</span></a>
+                    <a href="mailto:1192706675@qq.com"><span class="iconfont">&#xe7ed;</span></a>
+                    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2226887964"><span
+                            class="iconfont">&#xe62d;</span></a>
+                    <a href="https://topking66.gitee.io/atom.xml"><span class="iconfont">&#xe63b;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <!-- 音乐插件 -->
+        <div class="p">从来没有真正的绝境，只有心灵的迷途</div>
+        <div class="title"><span class="iconfont">&#xe60d;</span>
+            <span>MUSIC</span>
+        </div>
+        <div class="row">
+            <meting-js server="netease" type="playlist" id="4957576406" list-folded="true">
+            </meting-js>
+        </div>
+        <div class="title"><span class="iconfont">&#xe60d;</span>
+            <span>AWAKE</span>
+        </div>
+        <video controls poster="img/video.jpg">
+            <source src="video/video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="article">
+        <div class="article_title"><img src="img/5.gif" alt=""> <span>文章</span></div>
+        <div class="article_list">
+            <div class="list">
+                <a href="#">
+                    <img src="img/a.jpg" alt="">
+                    <p>预解析</p>
+                </a>
+
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/b.jpg" alt="">
+                    <p>对象</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/c.jpg" alt="">
+                    <p>内置对象</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/d.jpg" alt="">
+                    <p>DOM获取元素,操作元素</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/e.jpg" alt="">
+                    <p>DOM节点操作</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/f.jpg" alt="">
+                    <p>事件高级</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="albums">
+        <div class="title"><img src="img/3.gif">相册呀！</div>
+        <div class="album">
+            <div class="album_list">
+                <a href="#">
+                    <img src="img/picture/view_1.jpg">
+                    <div>喜欢的风景呀</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2020 yph </p>
+    </div>
+    <span class="iconfont icon">&#xe62e;</span>
+</body>
+
+</html>
+<script src="JS/home.js"></script>
+<script src="JS/cursor.js"></script>
+<script src="JS/yinghua.js"></script>
+<script src="JS/jquery.min.js"></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<!-- 诗词自动 -->
+<script type="text/javascript">
+    jinrishici.load(function (result) {
+        // 自己的处理逻辑
+        content = result.data.origin.content,
+            title = result.data.origin.title,
+            dynasty = result.data.origin.dynasty,
+            author = result.data.origin.author,
+            info = '《' + title + '》' + author
+        pre = []
+        for (var key in content) {
+            pre.push(content[key])
+        }
+        var typed = new Typed("#shici", {
+            strings: pre,
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+        });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>

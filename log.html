@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/log.css">
+    <title>日志</title>
+</head>
+
+<body>
+    <div class="other">
+        <div class="nav">
+            <ul>
+                <img src="img/loading1 .gif">
+                <li class="nav_tab1"><a href="#"><span class="iconfont">&#xe65f;</span>首页</a></li>
+                <li><a href="#"><span class="iconfont">&#xe60c;</span>日志</a></li>
+                <li><a href="#"><span class="iconfont">&#xe797;</span>关于</a></li>
+                <li><a href="#"><span class="iconfont">&#xe612;</span>相册</a></li>
+                <li><a href="#"><span class="iconfont">&#xe61e;</span>留言</a></li>
+                <li><a href="#"><span class="iconfont">&#xe67c;</span>登录</a></li>
+                <li><a href="#"><span class="iconfont">&#xe71c;</span>注册</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <p class="title_nav">日志</p>
+            <div class="shici">
+                <span id="shici"></span><br>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="article_list">
+            <div class="list">
+                <a href="#.html">
+                    <img src="img/a.jpg" alt="">
+                    <p>预解析</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#.html">
+                    <img src="img/b.jpg" alt="">
+                    <p>对象</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#.html">
+                    <img src="img/c.jpg" alt="">
+                    <p>内置对象</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#.html">
+                    <img src="img/d.jpg" alt="">
+                    <p>DOM获取元素,操作元素</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/e.jpg" alt="">
+                    <p>DOM节点操作</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/f.jpg" alt="">
+                    <p>事件高级</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/g.jpg" alt="">
+                    <p>js简易留言板</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/a.jpg" alt="">
+                    <p>BOM</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/b.jpg" alt="">
+                    <p>js缓慢动画函数</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#">
+                    <img src="img/c.jpg" alt="">
+                    <p>Jquery(1)概述</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href=#">
+                    <img src="img/d.jpg" alt="">
+                    <p>Jquery(2)使用</p>
+                </a>
+            </div>
+            <div class="list">
+                <a href="#  ">
+                    <img src="img/e.jpg" alt="">
+                    <p>Jquery(3)选择器</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>
+            <p>Copyright © 2020 yph </p>
+        </p>
+    </div>
+    <span class="iconfont icon">&#xe62e;</span>
+</body>
+
+</html>
+<script src="JS/log.js"></script>
+<script src="JS/cursor.js"></script>
+<script src="JS/jquery.min.js"></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<!-- 诗词自动 -->
+<script type="text/javascript">
+    jinrishici.load(function (result) {
+        // 自己的处理逻辑
+        content = result.data.origin.content,
+            title = result.data.origin.title,
+            dynasty = result.data.origin.dynasty,
+            author = result.data.origin.author,
+            info = '《' + title + '》' + author
+        pre = []
+        for (var key in content) {
+            pre.push(content[key])
+        }
+        var typed = new Typed("#shici", {
+            strings: pre,
+            startDelay: 300,
+            typeSpeed: 100,
+            loop: true,
+            backSpeed: 50,
+            showCursor: true
+        });
+    });
+</script>
